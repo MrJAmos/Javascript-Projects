@@ -24,22 +24,21 @@
     </form>
 
     <h3>DOM 1 </h3>
-    <p id = "do1"> </p>
 
     <script>
-        var para;
+        let para;
         function createParagraph() {
             para = document.createElement("P");
         }
         function changeParagraph() {
-            var do2 = document.getElementById('do2').value;
-            var textnode = document.createTextNode("hello");
-            ptag.appendChild(textnode);
-            document.getElementById('do1').appendChild(ptag);
+            let do2 = document.getElementById('do2').value;
+            let textnode = document.createTextNode(do2);
+            para.appendChild(textnode);
+            document.body.appendChild(para);
+
         }
         function deleteParagraph() {
-            //var ptag = document.getElementsByTagName("p");
-            ptag.removeChild(ptag.childNodes[0]);
+            para.parentNode.removeChild(para);
         }
     </script>
 
