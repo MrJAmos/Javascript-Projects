@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Intermediate</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="Jude Amos" content="SitePoint">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <form>
+
+            <input type="button" , onclick="createParagraph()" , value="Create">
+            <input type="text" , id = "do2">
+            <input type="button" , onclick="changeParagraph()" , value="Change">
+            <input type="button" , onclick="deleteParagraph()" , value="Delete">
+            
+    </form>
+
+    <h3>DOM 1 </h3>
+    <p id = "do1"> </p>
+
+    <script>
+        var para;
+        function createParagraph() {
+            para = document.createElement("P");
+        }
+        function changeParagraph() {
+            var do2 = document.getElementById('do2').value;
+            var textnode = document.createTextNode("hello");
+            ptag.appendChild(textnode);
+            document.getElementById('do1').appendChild(ptag);
+        }
+        function deleteParagraph() {
+            //var ptag = document.getElementsByTagName("p");
+            ptag.removeChild(ptag.childNodes[0]);
+        }
+    </script>
+
+</body>
+
+</html>

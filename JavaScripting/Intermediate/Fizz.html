@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Intermediate</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="Jude Amos" content="SitePoint">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <form>
+    Max Count: <input type="number" , id="count"> 
+    Word for Div 3: <input type="text" , id="div3"> 
+    word for div 5: <input type="text" , id="div5"> 
+    <input type="button", onclick="fizzBuzz()", value="Play"> 
+  </form>
+
+  <h3>FizzBuzz </h3>
+  <p id='f1'> </p>
+
+  <script>
+    function fizzBuzz(){
+      var count = document.getElementById('count').value;
+      var div3 = document.getElementById('div3').value;
+      var div5 = document.getElementById('div5').value;
+
+      fizz(count,div3,div5);
+    }
+
+    function fizz(c,d3,d5) {
+      var f1 = document.getElementById('f1');
+      for (var j = 1; j <= c ; j++) {
+        if (j % 3 === 0 && j % 5 === 0) {
+          f1.innerHTML += d3.concat(d5) + " <br>";
+        }
+        else if (j % 3 === 0) {
+          f1.innerHTML += d3 + "<br>";
+        }
+        else if (j % 5 === 0) {
+          f1.innerHTML += d5 + "<br>";
+        }
+        else {
+          f1.innerHTML += j + "<br>";
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

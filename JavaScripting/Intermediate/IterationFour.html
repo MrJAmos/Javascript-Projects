@@ -1,0 +1,59 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Intermediate</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="Jude Amos" content="SitePoint">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <form>
+    Max Count: <input type="number" , id="count">
+      <input type="button" , onclick="iterationFour()" , value="Play">
+  </form>
+
+  <h3>Iteration 4 </h3>
+  <p id='f1'> </p>
+
+  <script>
+    function iterationFour() {
+      var count = document.getElementById('count').value;
+      iterate(count);
+    }
+
+    function iterate(c) {
+      var f1 = document.getElementById('f1');
+      var store = c;
+      var j = 0;
+
+      while (store !== 1) {
+        j++;
+        f1.innerHTML += "Iteration: " + j + "Work Done: ";
+        if(store % 3 === 0) {
+          store = store / 3;
+          f1.innerHTML += "Divided by 3 <br>";
+        }
+        else {
+          if ((store + 1) % 3 === 0) {
+            store = (store + 1) / 3;
+            f1.innerHTML += "+1 and devided by 3 <br>";
+          }
+          else if ((store - 1) % 3 === 0) {
+            store = (store - 1) / 3;
+            f1.innerHTML += "-1 and devided by 3 <br>";
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

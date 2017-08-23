@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Intermediate</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="Jude Amos" content="SitePoint">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <form>
+    String: <input type="text" , id="string1"> 
+    <input type="button", onclick="stringFour()", value="Play"> 
+  </form>
+
+  <h3>String 4 </h3>
+  <p id='f1'> </p>
+
+  <script>
+    function stringFour(){
+      var string1 = document.getElementById('string1').value;
+      var f1 = document.getElementById('f1');
+      f1.innerHTML = string1 + "<br>" + string(string1);
+    }
+
+    function string(x) {
+        var store1 = x;
+        var output = 0;
+      for (var j = 0; j < store1.length ; j++) {
+          if(store1.charAt(j) === store1.charAt((j+1)) && store1.charAt(j) === store1.charAt(j+2)){
+            output++;
+          }
+      }
+      return output;
+    }
+  </script>
+
+</body>
+</html>

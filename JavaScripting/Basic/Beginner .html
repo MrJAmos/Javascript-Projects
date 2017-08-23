@@ -1,0 +1,220 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Basic</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="Jude Amos" content="SitePoint">
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+
+<body>
+  <h1>
+    <center> Exercieses </center>
+  </h1>
+
+  <h3>Creating a Script</h3>
+  <script>
+    //alert("Hello World");
+  </script>
+
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> Variables </h3>
+  <script>
+    var x = "Hello Word";
+    /*alert(x);*/
+    console.log(x);
+    document.write(x);
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> Functions 1 </h3>
+  <script>
+    function functionOne(x1) {
+      return x1 * x1;
+    }
+    document.write(functionOne(3));
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+
+  <h3> Functions 2 </h3>
+  <script>
+    function functionTwo(a, b, c) {
+      return a + b + c;
+    }
+    document.write(functionTwo(1, 2, 3));
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> Variables 1 </h3>
+  <script>
+    var person = { name: "Jude", age: 30, occupation: "Model" }
+    function personOne() {
+      return person.name + " " + person.age + " " + person.occupation + "<br><br>" + "Changed to:<br><br>";
+    }
+    function personOneChange() {
+      person.name = "Bob";
+      person.age = 30;
+      person.occupation = "Stripper";
+      return person.name + " " + person.age + " " + person.occupation;
+    }
+    document.write(personOne() + personOneChange());
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+
+  <h3> Event </h3>
+  <script>
+    function eventOne() {
+      alert("Hi there");
+    }
+
+  </script>
+
+  <button type="button" onclick="eventOne()"> Click me </button>
+
+  <h3> Functions 3 / Event 2 </h3>
+
+  <form>
+    First Name: <br>
+    <input type="text" id="name1" /><br> Age:
+    <br>
+    <input type="number" id="age1" /><br> Occupation: <br>
+    <input type="text" id="occupation1" /> <br> Click Submit to Create Person: <br>
+    <button type="button" onclick="personTwo()" /> Create </button><br>
+  </form>
+  <p id="overwrite"></p>
+  <p id="change"> </p>
+  <script>
+    function personTwo() {
+      var n = document.getElementById('name1').value;
+      var a = document.getElementById('age1').value;
+      var o = document.getElementById('occupation1').value;
+      var personOne = { name: n, age: a, occupation: o };
+      document.getElementById('overwrite').innerHTML = personOne.name + " " + personOne.age + " " + personOne.occupation + "<br><br>" + "Changed to:<br><br>";
+
+      personOne.name = "Bob";
+      personOne.age = 20;
+      personOne.occupation = "Stripper";
+      document.getElementById('change').innerHTML = personOne.name + " " + personOne.age + " " + personOne.occupation;
+    }
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> String 1 </h3>
+
+  <script>
+    function string() {
+      var a = "He said \"My name is Elliott\"."
+      document.write(a);
+      var upper = a.toUpperCase();
+      return upper;
+    }
+    document.write("<br>" + string());
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+
+  <h3> String 2 </h3>
+  <p id='string2'> </p>
+  <script>
+    function stringTwo() {
+      var a = "hello "
+      var b = 8
+      var result = a.concat(8);
+      return result;
+    }
+    var hold = stringTwo();
+    document.getElementById('string2').innerHTML = hold;
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> Array 1 / Strings 3 </h3>
+  <p id='ar1'> </p>
+  <p id='ar2'> </p>
+  <p id='ar3'> </p>
+
+  <script>
+    function array() {
+      var ar1 = document.getElementById('ar1');
+      var ar2 = document.getElementById('ar2');
+      var ar3 = document.getElementById('ar3');
+      var array = ["hello ", "hi ", "sup "];
+      ar1.innerHTML = array.toString();
+      array.push("yo");
+      ar2.innerHTML = array.toString();
+      array.pop();
+      ar3.innerHTML = array.toString();
+    }
+    array();
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+  <h3> Conditionals 1 </h3>
+  <p id='con1'> </p>
+  <script>
+    var con1 = document.getElementById('con1');
+    function checkAge(p) {
+      if (p > 19 && p < 41) {
+        return true;
+      }
+      else {
+        return false;
+      }
+    }
+    con1.innerHTML = checkAge(person.age);
+
+  </Script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+
+  <h3> Iteration 1 </h3>
+  <p id='ite1'> </p>
+  <script>
+    var ite1 = document.getElementById('ite1');
+    function iterateOne() {
+      for (var j = 1; j < 11; j++) {
+        ite1.innerHTML += "Step: " + j + "<br>";
+      }
+    }
+    iterateOne();
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+
+  <h3>iteration 2 </h3>
+  <p id='ite2'> </p>
+
+  <script>
+    var ite2 = document.getElementById('ite2');
+    function iterataionTwo() {
+      for (var j = 1; j < 11; j++) {
+        if (j % 2 === 0) {
+          ite2.innerHTML += "Step: " + j + "<br>";
+        }
+      }
+    }
+    iterataionTwo();
+
+  </script>
+  <!-- //////////////////////////////////////////////////////////////////   -->
+
+</body>
+
+</html>
