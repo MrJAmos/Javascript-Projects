@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Intermediate</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="Jude Amos" content="SitePoint">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <script>
+        var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        request.onload = function () {
+            var requestData = request.response;            
+            var squad = "Squad Name: " + requestData['squadName'] ;
+            var homeTown = "Home Town: " +  requestData['homeTown'];
+            var formed =  "Formed: " + requestData['formed'] ;
+            var secretBase =  "Secret Base: " + requestData['secretBase'];
+            var active = "Acive: " + requestData['active'];
+
+            var member = "Members: " + requestData.members[0];
+            console.log(requestData.members[0]);
+            var para = document.createElement('P');
+
+            para.id = "paraid";
+            para.innerHTML = squad  + "<br>" +  homeTown + "<br>" + formed+ "<br>" + secretBase+ "<br>" + active + "<br>" ;
+            
+            document.getElementsByTagName('body')[0].appendChild(para);
+        }
+    </script>
+
+</body>
+
+</html>

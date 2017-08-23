@@ -65,7 +65,7 @@
     }
     function personOneChange() {
       person.name = "Bob";
-      person.age = 30;
+      person.age = 35;
       person.occupation = "Stripper";
       return person.name + " " + person.age + " " + person.occupation;
     }
@@ -76,14 +76,16 @@
 
 
   <h3> Event </h3>
+  <p id = "ag1"> </p>
+  <button type="button" onclick="eventOne()"> Click me </button>
   <script>
     function eventOne() {
-      alert("Hi there");
-    }
+      person.age++;
+      var ag1 = document.getElementById('ag1');
+      ag1.innerHTML = person.name + " "+person.age;
+      }
 
   </script>
-
-  <button type="button" onclick="eventOne()"> Click me </button>
 
   <h3> Functions 3 / Event 2 </h3>
 
