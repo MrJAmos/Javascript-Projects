@@ -52,17 +52,35 @@
         }
 
         let knight = new makeKnight(0, 1);
+        //pos x = 0, y = 0
+        //target x = 0, y = 1
 
 
-        while(cond(knight.pos, knight.target)){
-
+        function  check(v1,v2){
+            let knightPos = v1;
+            let targetPos = v2;
+            if((knightPos.x - targetPos.x) < 0){
+                if((knightPos.y - targetPos) < 0){
+                    //target is Bottom left
+                }
+                else {
+                    //target is Top Left
+                }
+            }
+            else {
+                if((knightPos.y - targetPos) < 0){
+                  //target is Bottom Right
+                }
+                else {
+                  //target is Top Right
+                }
+            }
         }
 
-        for(let i = 0; i < 10; i++){
-            print(knight.getPos());
-            print(knight.target.getPos());
-            knight.moveLeftOneUpTwo();
+       /* while(cond(knight.pos, knight.target)){
+        }*/
 
+        for(let i = 0; i < 10; i++){
         }
 
     </script>
