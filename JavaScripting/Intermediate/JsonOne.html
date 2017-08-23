@@ -15,27 +15,34 @@
 
 <body>
     <script>
-        var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
-        var request = new XMLHttpRequest();
+        let requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+        let request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json';
         request.send();
         request.onload = function () {
-            var requestData = request.response;            
-            var squad = "Squad Name: " + requestData['squadName'] ;
-            var homeTown = "Home Town: " +  requestData['homeTown'];
-            var formed =  "Formed: " + requestData['formed'] ;
-            var secretBase =  "Secret Base: " + requestData['secretBase'];
-            var active = "Acive: " + requestData['active'];
+            let requestData = request.response;            
+            let squad = "Squad Name: " + requestData['squadName'] ;
+            let homeTown = "Home Town: " +  requestData['homeTown'];
+            let formed =  "Formed: " + requestData['formed'] ;
+            let secretBase =  "Secret Base: " + requestData['secretBase'];
+            let active = "Acive: " + requestData['active'];
 
-            var member = "Members: " + requestData.members[0];
-            console.log(requestData.members[0]);
-            var para = document.createElement('P');
+            let member = "Members: " + requestData.members[0].length;
+            let para = document.createElement('P');
 
             para.id = "paraid";
-            para.innerHTML = squad  + "<br>" +  homeTown + "<br>" + formed+ "<br>" + secretBase+ "<br>" + active + "<br>" ;
+            para.innerHTML = squad  + "<br>" +  homeTown + "<br>" + formed+ "<br>" + secretBase+ "<br>" + active + "<br>" + member;
             
             document.getElementsByTagName('body')[0].appendChild(para);
+        }
+
+        function printMember(x){
+            let info = x;
+            for(let i = 0; i < info.length; i++){
+                
+            }
+            
         }
     </script>
 

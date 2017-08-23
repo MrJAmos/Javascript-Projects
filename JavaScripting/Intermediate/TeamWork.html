@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Intermediate</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="Jude Amos" content="SitePoint">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <script>
+        function moveVector(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+
+        function print(x){
+            console.log(x);
+        }
+        function makeKnight(x, y) {
+            this.pos = new moveVector(0, 0);
+            this.target = new moveVector(x, y);
+            this.getPos = function () { return "x: " + this.pos.x + " y: " + this.pos.y }
+            //Up movement
+            this.moveLeftOneUpTwo = function () { this.pos.x += -1; this.pos.y += 2; }
+            this.moveLeftTwoUpOne = function () { this.pos.x += -2; this.pos.y += 1; }
+            this.moveRightOneUpTwo = function () { this.pos.x += 1; this.pos.y += 2; }
+            this.moveRightTwoUpOne = function () { this.pos.x += 2; this.pos.y += 1; }
+            //Bottom Movement
+            this.moveDownOneLeftTwo = function () { this.pos.x += -2; this.pos.y += -1; }
+            this.moveDowntwoLeftOne = function () { this.pos.x += -1; this.pos.y += -2; }
+            this.moveDownOneRightTwo = function () { this.pos.x += 2; this.pos.y += -1; }
+            this.moveDownTwoRightOne = function () { this.pos.x += 1; this.pos.y += -2; }
+        }
+
+        function cond(v1,v2){
+            let knightPos = v1;
+            let targetPos = v2;
+            if(knightPos.x && knight.y === targetPos.x && targetPos.y){
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+        let knight = new makeKnight(0, 1);
+
+
+        while(cond(knight.pos, knight.target)){
+
+        }
+
+        for(let i = 0; i < 10; i++){
+            print(knight.getPos());
+            print(knight.target.getPos());
+            knight.moveLeftOneUpTwo();
+
+        }
+
+    </script>
+
+</body>
+
+</html>
