@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Intermediate</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="Jude Amos" content="SitePoint">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+    <center>
+        <h1>Search Kings</h1>
+        <input type='text' , id='sch2' />
+        <input type='button', id='sch' , onclick='x()' value='search' \>
+        <input type='button', id = 'Rref', onclick ='refresh()', value = 'Research' /></center>
+    <script>
+        let requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
+        let request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+
+        let x;
+        request.onload = function () {
+            let requestData = request.response;
+            x = function () { search(requestData) };
+        }
+        function refresh(){
+            location.reload();
+        }
+
+        function search(requestData) {
+            let store = "";
+            let para = document.createElement('P');
+            let sch2 = document.getElementById('sch2').value;
+            for (let i = 0; i < lengthOfMembers(requestData); i++) {
+                let nm = requestData[i]['nm'];
+                let cty = requestData[i]['cty'];
+                let hse = requestData[i]['hse'];
+                let yrs = requestData[i]['yrs'];
+                if (nm.includes(sch2) || cty.includes(sch2) || hse.includes(sch2) || yrs.includes(sch2)) {
+                    store += "<center>" + nm + "<br>" + cty + "<br> " + hse + "<br> " + yrs + "<br><br></center>";
+                }
+            }
+            para.innerHTML = store;
+            document.getElementsByTagName('body')[0].appendChild(para);
+            store = "";
+        }
+
+
+        function lengthOfMembers(obj) {
+            let c = 0;
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    c++;
+                }
+            }
+            return c;
+        }
+    </script>
+
+</body>
+
+</html>
