@@ -1,31 +1,35 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-
+  <script language="javascript" src="garagejavascript.js"></script>  
   <title>Garage</title>
-  <meta name="description" content="The HTML5 Herald">
   <meta name="Jude Amos" content="SitePoint">
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
 </head>
 
 <body>
 <form>
     <center>
-      Name:  <input type="nam" , id="count"/> 
-      Model: <input type="mod" , id="div3"/> 
-      Reg: <input type="re" , id="div5"/> <br><br>
-      <input type="Button" , id="chin", value = "Check In"/> 
-      <input type="Button" , id="chout", value = "Check Out"/> 
-      <input type="Button" , id="outgar", value = "Output Garage"/> 
-      <input type="Button" , id="calbill", value = "Calculate Bill"/> 
+        <h1>MrJ's Garage</h1>
+        <br><br>
+      Name:  <input type="text" , id="name", value = "Civic"/> 
+      Model: <input type="text" , id="model", value =  "S"/> 
+      Register Plate: <input type="text" , id="reg",  value = "asd123"/> 
+      Value: <input type="numbers" , id="val", value = "100"/> <br><br>
+
+      <input type="Button" , id="chin", onclick = "checkIn()" value = "Check In"/> 
+      <input type="Button" , id="ref", onclick = "refresh()" value = "Refresh Page"/> <br><br>
+
+      Type In Register Plate To Checkout Or Calculate Bill to Fix <br><br>
+      <input type="text", id="regTwo"/><br><br>
+      <input type="Button", id="chout", onclick = "checkOut()" value = "Check Out"/> 
+      <input type="Button" , id="calbill", onclick = "calculateBill()", value = "Calculate Bill"/>
+      <input type="Button",  onclick = "checkOutAll()" value = "Check Out All"/> <br><br>
+      <input type="Button" , id="outgar", onclick = "outputGarage()" value = " Output Garage "/> <br>
     </center>
 </form>
-<Center> <h1>MrJ's Garage</h1><p>s....</p></center>
+<Center><br><p>Hello, How May I Help?...</p></center>
 </body>
 
 </html>
