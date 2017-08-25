@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script language="javascript" src="hang.js"></script>  
+    
+    <title>Hangman</title>
+    <meta name="Jude Amos" content="SitePoint">
+</head>
+
+<body>
+    <center>
+        <h1>Hangman</h1><br><br>
+        <form>
+        Name: <input type='text' , id='name', placeholder="Username" />  
+        <input type='button', onclick = "createPerson()", value='Play' \>
+        <input type='button', id = 'Rref', onclick ='refresh()', value = 'Refresh' />
+
+        Difficulty: <input type="radio" name = "level", id="easy", checked = "true" /> Easy
+        <input type="radio" name = "level", id="medium" /> Medium
+        <input type="radio"name = "level", id="hard" />  Hard
+        <br><br>  
+        
+        Guess: <input type='text' , id='guess', placeholder=" Your Guess" />
+        <input type='button', onclick='replace()' value='Guess' \>
+        <input type='button',  onclick='x()' value='Give Up' \>
+        <input type='button',  onclick='x()' value='Statistics' \><br><br><br>
+        </form>
+        <p id = "word"></p><br>    
+    </center>
+    <div id = "ui">
+    <p id = "count">Guess Left: </p>
+    <p>-----------------------Actions---------------------- </p>
+    <p id = "content"><p>
+    <p id= "draw"> <p>
+    </div>
+    
+
+</body>
+
+</html>
